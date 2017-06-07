@@ -577,6 +577,13 @@ angular.module('ui.bootstrap.tooltip', ['ui.bootstrap.position', 'ui.bootstrap.s
               removeTooltip();
               ttScope = null;
             });
+            
+            // Make sure tooltip is destroyed and removed When User Changes Message Or Remove From Template.
+            scope.$on('$uibTooltipdestroy', function onDestroyTooltip() {
+                unregisterTriggers();
+                removeTooltip();
+                ttScope = null;
+            });
           };
         }
       };
