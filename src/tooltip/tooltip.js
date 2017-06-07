@@ -405,7 +405,7 @@ angular.module('ui.bootstrap.tooltip', ['ui.bootstrap.position', 'ui.bootstrap.s
                 cancelShow();
               }
 
-              if (val && ttScope.isOpen) {
+              if (val && ttScope && ttScope.isOpen) {
                 hide();
               }
             });
